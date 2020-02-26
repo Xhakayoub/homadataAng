@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormBuilder, FormControl, FormGroup, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -11,9 +12,18 @@ import { CallFunctionService } from './call-function.service';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule  
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
+     
+  ],
+  exports: [
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [CallFunctionService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+ }
