@@ -9,27 +9,16 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit { 
-  title = 'appAng';
+ 
   result = "";
-  test = "ayoub";
   form: FormGroup;
   constructor(private _callFunctionService: CallFunctionService,
     private fb: FormBuilder){}
 
   
   ngOnInit(): void{
-    // this.test = "ayoub";
-    // this._callFunctionService.getResult().
-    // subscribe(
-    //   data=>{
-    //     this.result = data;
-    //   }
-    // );
-
-
     this._buildForm();
-
-  }
+}
 
   private _buildForm() {
     const fb = this.fb;
@@ -44,7 +33,7 @@ export class AppComponent implements OnInit {
 
   postForm() {
     this._callFunctionService.postForm(this.form.value).subscribe({
-      next: (data) => console.log(data)
+      next: (data) => {this.result = data["data"];}
     });
   }
 }

@@ -11,14 +11,9 @@ export class CallFunctionService {
   constructor(private http: HttpClient) { }
   
 
-  getResult() {
-  return this.http.get(
-    "http://127.0.0.1:3000/api/",
-    {responseType: 'text'}
-    );
-  }
+ 
   postForm(request: Request): Observable<Request> {
     const baseUrl = 'http://127.0.0.1:3000/';
-    return this.http.post<Request>(`${baseUrl}toto`, request);
+    return this.http.post<Request>(`${baseUrl}calcule`, request);
   }
 }
