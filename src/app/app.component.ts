@@ -23,8 +23,8 @@ export class AppComponent implements OnInit {
   private _buildForm() {
     const fb = this.fb;
     this.form = fb.group({
-      price: [null],
-      area: [null],
+      price: [null, Validators.required],
+      area: [null, Validators.required],
       numberOfRooms: [null],
       type: [null],
       status: [null]

@@ -6,12 +6,12 @@
 
       <div class="form-group">
       <label for="">Prix</label>
-      <input id="price" placeholder="Entrez le prix au m²" required type="text" class="form-control" formControlName="price">
+      <input id="price" placeholder="Entrez le prix au m²" type="text" class="form-control" formControlName="price">
       </div>
 
       <div class="form-group">
       <label for="">Surface</label>
-      <input id="area" required type="text" class="form-control" placeholder="Entrez la surface du bien" formControlName="area">
+      <input id="area" type="text" class="form-control" placeholder="Entrez la surface du bien" formControlName="area">
       </div>
 
       <div class="form-group">
@@ -22,10 +22,13 @@
       <div class="form-group">
       <label for="">Type</label>
       <select formControlName="type" class="form-control">
-        <option>
+        <option value="">
+          
+        </option>
+        <option value="1">
         Maison
         </option>
-        <option>
+        <option value="2">
           Appartement
         </option>
       </select>
@@ -34,25 +37,28 @@
       <div class="form-group">
       <label for="">L'état générale du bien</label>
       <select formControlName="status" class="form-control">
-        <option>
+        <option value="">
+
+        </option>
+        <option value="1">
         L'état du bien necessite des travaux
         </option>
-        <option>
+        <option value="2">
           Refait à neuf
         </option>
       </select>
       </div>
 
       <fieldset class="form-group">
-        <button type="button" class="btn btn-dark" (click)="postForm()">
+        <button type="button" class="btn btn-dark" (click)="postForm()" [disabled]="!form.valid">
         Submit
         </button>
       </fieldset>
     </form>
-      <div class="card text-white bg-dark mb-3 mt-5" style="max-width: 20rem;">
+      <div *ngIf="result" class="card text-white bg-dark mb-3 mt-5" style="max-width: 20rem;">
         <div class="card-header">Le calcule du prix final</div>
         <div class="card-body">
-          <input class="form-control" [(ngModel)]="result" id="result" type="text" >
+          <span>{{result}}</span>
         </div>
       </div>
     </div>
