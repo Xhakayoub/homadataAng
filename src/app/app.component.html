@@ -5,12 +5,12 @@
 
       <div class="form-group">
       <label for="">Prix</label>
-      <input type="text" class="form-control" formControlName="price">
+      <input id="price" placeholder="Entrez le prix au m²" required type="text" class="form-control" formControlName="price">
       </div>
 
       <div class="form-group">
       <label for="">Surface</label>
-      <input type="text" class="form-control" formControlName="area">
+      <input id="area" required type="text" class="form-control" placeholder="Entrez la surface du bien" formControlName="area">
       </div>
 
       <div class="form-group">
@@ -49,9 +49,9 @@
       </fieldset>
     </form>
       <div class="card text-white bg-dark mb-3 mt-5" style="max-width: 20rem;">
-        <div class="card-header">Le clacule du prix final</div>
+        <div class="card-header">Le calcule du prix final</div>
         <div class="card-body">
-          <input [(ngModel)]="result" id="result" type="text" >
+          <input class="form-control" [(ngModel)]="result" id="result" type="text" >
         </div>
       </div>
     </div>
